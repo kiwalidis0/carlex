@@ -1,0 +1,12 @@
+/* ActParent.css */
+
+/* Style for the container to center its content */
+.container {
+    display: flex;          /* Use Flexbox for centering */
+    justify-content: center; /* Center horizontally */
+    align-items: center;    /* Center vertically */
+    background-color: #914F1E; /* Optional: Background color for better visibility */
+    color: #F7DCB9;
+}
+
+
