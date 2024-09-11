@@ -1,15 +1,14 @@
 import React, { useState } from "react";
 import LoginPanel from "./LoginPanel";
 import './login.css';
-
 import {useNavigate} from 'react-router-dom'; // Import navigation method
+// import AuthError from "../Dashboard/AuthError";
  
 function LoginForm() {
     const [username, setUsername] = useState('');
     const [password, setPassword] = useState('');
     const [accountType, setAccountType] = useState('user');
     const [user, setUser] = useState(null);
-    
     const [loginAttempts, setLoginAttempts] = useState(0); // Number of login attempts
     const [errorMessage, setErrorMessage] = useState(''); // String for Error message
 
@@ -35,7 +34,7 @@ function LoginForm() {
             setErrorMessage('Invalid credentials');
 
             if (loginAttempts +1 >= 3){
-                navigate('');
+                navigate('/auth-error');
             }
         }
 

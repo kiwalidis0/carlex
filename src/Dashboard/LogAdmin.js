@@ -49,6 +49,10 @@ function LogAdmin(){
                             </select>
                         </div>
                         <button onClick={handLogin}>Login</button>
+                        {errorMessage && <p style={{color:'red'}}>{errorMessage}</p>}
+                        {loginAttempts > 0 && (
+                            <p style={{color:'red'}}>Login Attempts: {loginAttempts}/3</p>
+                        )}
                         <button onClick={handSignup}>Sign Up</button>
                     </div>
                 )
