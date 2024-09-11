@@ -30,6 +30,13 @@ function LoginForm() {
             setUser({name: username, isAdmin});
         } else if (!isAdmin && (username === validAdminCredentials.username && password === validAdminCredentials.password)){
             setUser({name: username, isAdmin: false});
+        } else {
+            setLoginAttempts(prevAttempt => prevAttempt +1);
+            setErrorMessage('Invalid credentials');
+
+            if (loginAttempts +1 >= 3){
+                navigate('');
+            }
         }
 
         
